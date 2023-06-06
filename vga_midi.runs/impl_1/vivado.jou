@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Mon Jun  5 23:24:53 2023
+# Process ID: 15272
+# Current directory: O:/CS56_S23/vga_midi/vga_midi/vga_midi.runs/impl_1
+# Command line: vivado.exe -log vga_test_pattern_shell.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source vga_test_pattern_shell.tcl -notrace
+# Log file: O:/CS56_S23/vga_midi/vga_midi/vga_midi.runs/impl_1/vga_test_pattern_shell.vdi
+# Journal file: O:/CS56_S23/vga_midi/vga_midi/vga_midi.runs/impl_1\vivado.jou
+# Running On: mecha-9, OS: Windows, CPU Frequency: 3504 MHz, CPU Physical cores: 4, Host memory: 16953 MB
+#-----------------------------------------------------------
+source vga_test_pattern_shell.tcl -notrace

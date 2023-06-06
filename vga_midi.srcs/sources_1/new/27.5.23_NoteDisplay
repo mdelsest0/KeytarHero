@@ -1,0 +1,69 @@
+--=============================================================================
+--Library Declarations:
+--=============================================================================
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+use ieee.math_real.all;
+library UNISIM;
+use UNISIM.VComponents.all;
+
+--=============================================================================
+--Entity Declaration:
+--=============================================================================
+entity NoteDisplay is
+    port( clk, hit,video_on_note               : in std_logic;
+          hVideo_on_note, vVideo_on_note       : in std_logic;                
+          pixelX, pixelY                       : in std_logic_vector(9 downto 0);
+          pix_boolean                          : in std_logic_vector(639 downto 0);
+          color                                : out std_logic_vector(7 downto 0);
+          addr_note                            : out std_logic_vector(8 downto 0));
+end entity;
+
+
+architecture behavior of NoteDisplay is 
+--signals and constants
+signal data_read    : std_logic_vector(639 downto 0) := (others => '0');
+constant WHITE      : std_logic_vector(7 downto 0) := "11111111";
+constant BLACK      : std_logic_vector(7 downto 0) := "00000000";
+constant GRAY       : std_logic_vector(7 downto 0) := "01001001";
+constant RED        : std_logic_vector(7 downto 0)  := "11100000";
+constant BLUE       : std_logic_vector(7 downto 0)  := "00000011";
+constant GREEN      : std_logic_vector(7 downto 0)  := "00111100";
+
+begin
+    color_generationProc: process(clk)
+    begin
+        if rising_edge(clk) then
+            if hVideo_on_note = '0' and vVideo_on_note = '1' then 
+                addr_note <= pixelY(8 downto 0);
+                data_read <= pix_boolean;
+            end if;
+            -- if no note to display then follow the standard pattern that displays background -- pix_boolean = 0
+            if video_on_note = '1' then 
+                if unsigned(pixelX) = 40 and unsigned(pixelY) < 480 then   color <= RED;
+                elsif unsigned(pixelY) = 70 then  color <= BLACK;
+                elsif unsigned(pixelY) = 90 then color <= BLACK;
+                elsif unsigned(pixelY) = 110 then color <= BLACK;
+                elsif unsigned(pixelY) = 130 then color <= BLACK;
+                elsif unsigned(pixelY) = 150 then color <= BLACK;
+                elsif unsigned(pixelY) = 290 then color <= BLACK;
+                elsif unsigned(pixelY) = 310 then color <= BLACK;
+                elsif unsigned(pixelY) = 330 then color <= BLACK;
+                elsif unsigned(pixelY) = 350 then color <= BLACK;
+                elsif unsigned(pixelY) = 370 then color <= BLACK;
+                else color <= WHITE;
+                end if;
+                -- assign value after to override?
+                if data_read(to_integer(unsigned(pixelX))) = '1' and (not (unsigned(pixelX) < 40)) then
+                    color <= BLUE;
+                elsif (data_read(to_integer(unsigned(pixelX))) = '1' and unsigned(pixelX) < 40 and hit = '1') then
+                    color <= GREEN;
+                elsif (data_read(to_integer(unsigned(pixelX))) = '1' and unsigned(pixelX) < 40 and hit = '0') then
+                    color <= RED;
+                end if;
+           else color <= GRAY;   
+           end if;
+        end if;
+     end process color_generationProc;
+end behavior;

@@ -1,0 +1,15 @@
+
+*** Running vivado
+    with args -log blk_pix_booleans.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source blk_pix_booleans.tcl
+
+
+
+****** Vivado v2021.2 (64-bit)
+  **** SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+  **** IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source blk_pix_booleans.tcl -notrace
+create_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1238.180 ; gain = 0.000
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP blk_pix_booleans, cache-ID = 1b1a8c94c334e4b9.
+INFO: [Common 17-206] Exiting Vivado at Tue May 30 15:47:32 2023...

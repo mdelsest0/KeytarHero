@@ -1,0 +1,460 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Mon Jun  5 23:23:28 2023
+# Process ID: 3656
+# Current directory: O:/CS56_S23/vga_midi/vga_midi/vga_midi.runs/synth_1
+# Command line: vivado.exe -log vga_test_pattern_shell.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source vga_test_pattern_shell.tcl
+# Log file: O:/CS56_S23/vga_midi/vga_midi/vga_midi.runs/synth_1/vga_test_pattern_shell.vds
+# Journal file: O:/CS56_S23/vga_midi/vga_midi/vga_midi.runs/synth_1\vivado.jou
+# Running On: mecha-9, OS: Windows, CPU Frequency: 3504 MHz, CPU Physical cores: 4, Host memory: 16953 MB
+#-----------------------------------------------------------
+source vga_test_pattern_shell.tcl -notrace
+create_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1237.148 ; gain = 0.000
+Command: read_checkpoint -auto_incremental -incremental O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/utils_1/imports/synth_1/vga_test_pattern_shell.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/utils_1/imports/synth_1/vga_test_pattern_shell.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top vga_test_pattern_shell -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+WARNING: [Designutils 20-4072] Reference run did not run incremental synthesis because the design is too small; reverting to default synthesis
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 5668
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1259.691 ; gain = 22.543
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'vga_test_pattern_shell' [O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/imports/VGA_FinalProject/vga_test_pattern_shell.vhd:22]
+INFO: [Synth 8-3491] module 'clock_generation' declared at 'O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/imports/VGA_FinalProject/clock_generation.vhd:14' bound to instance 'clock_generation_uut' of component 'clock_generation' [O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/imports/VGA_FinalProject/vga_test_pattern_shell.vhd:161]
+INFO: [Synth 8-638] synthesizing module 'clock_generation' [O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/imports/VGA_FinalProject/clock_generation.vhd:25]
+INFO: [Synth 8-113] binding component instance 'Slow_clock_buffer' to cell 'BUFG' [O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/imports/VGA_FinalProject/clock_generation.vhd:62]
+INFO: [Synth 8-256] done synthesizing module 'clock_generation' (1#1) [O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/imports/VGA_FinalProject/clock_generation.vhd:25]
+INFO: [Synth 8-3491] module 'vga_driver' declared at 'O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/imports/VGA_FinalProject/vga_driver.vhd:6' bound to instance 'vga_driver_uut' of component 'vga_driver' [O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/imports/VGA_FinalProject/vga_test_pattern_shell.vhd:165]
+INFO: [Synth 8-638] synthesizing module 'vga_driver' [O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/imports/VGA_FinalProject/vga_driver.vhd:18]
+INFO: [Synth 8-256] done synthesizing module 'vga_driver' (2#1) [O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/imports/VGA_FinalProject/vga_driver.vhd:18]
+INFO: [Synth 8-3491] module 'MemBlockShiftCircuit' declared at 'O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/new/blockmover.vhd:31' bound to instance 'blockmover_uut' of component 'MemBlockShiftCircuit' [O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/imports/VGA_FinalProject/vga_test_pattern_shell.vhd:176]
+INFO: [Synth 8-638] synthesizing module 'MemBlockShiftCircuit' [O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/new/blockmover.vhd:50]
+WARNING: [Synth 8-614] signal 'GameLogic' is read in the process but is not in the sensitivity list [O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/new/blockmover.vhd:97]
+WARNING: [Synth 8-614] signal 'shiftNPixels' is read in the process but is not in the sensitivity list [O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/new/blockmover.vhd:270]
+WARNING: [Synth 8-614] signal 'adrVGA' is read in the process but is not in the sensitivity list [O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/new/blockmover.vhd:270]
+WARNING: [Synth 8-614] signal 'TargetNote' is read in the process but is not in the sensitivity list [O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/new/blockmover.vhd:270]
+WARNING: [Synth 8-614] signal 'RData' is read in the process but is not in the sensitivity list [O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/new/blockmover.vhd:270]
+INFO: [Synth 8-256] done synthesizing module 'MemBlockShiftCircuit' (3#1) [O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/new/blockmover.vhd:50]
+INFO: [Synth 8-3491] module 'blk_mem_gen_0' declared at 'O:/CS56_S23/vga_midi/vga_midi/vga_midi.runs/synth_1/.Xil/Vivado-3656-mecha-9/realtime/blk_mem_gen_0_stub.vhdl:5' bound to instance 'mySong' of component 'blk_mem_gen_0' [O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/imports/VGA_FinalProject/vga_test_pattern_shell.vhd:188]
+INFO: [Synth 8-638] synthesizing module 'blk_mem_gen_0' [O:/CS56_S23/vga_midi/vga_midi/vga_midi.runs/synth_1/.Xil/Vivado-3656-mecha-9/realtime/blk_mem_gen_0_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'blk_pix_booleans' declared at 'O:/CS56_S23/vga_midi/vga_midi/vga_midi.runs/synth_1/.Xil/Vivado-3656-mecha-9/realtime/blk_pix_booleans_stub.vhdl:5' bound to instance 'blk_mem_uut' of component 'blk_pix_booleans' [O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/imports/VGA_FinalProject/vga_test_pattern_shell.vhd:193]
+INFO: [Synth 8-638] synthesizing module 'blk_pix_booleans' [O:/CS56_S23/vga_midi/vga_midi/vga_midi.runs/synth_1/.Xil/Vivado-3656-mecha-9/realtime/blk_pix_booleans_stub.vhdl:20]
+INFO: [Synth 8-3491] module 'NoteDisplay' declared at 'O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/new/27.5.23_NoteDisplay:14' bound to instance 'NoteDisplay_uut' of component 'NoteDisplay' [O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/imports/VGA_FinalProject/vga_test_pattern_shell.vhd:205]
+INFO: [Synth 8-638] synthesizing module 'NoteDisplay' [O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/new/27.5.23_NoteDisplay:24]
+INFO: [Synth 8-256] done synthesizing module 'NoteDisplay' (4#1) [O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/new/27.5.23_NoteDisplay:24]
+INFO: [Synth 8-3491] module 'DetermineHIT' declared at 'O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/new/DetermineHIT.vhd:31' bound to instance 'detHitLogic' of component 'DetermineHIT' [O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/imports/VGA_FinalProject/vga_test_pattern_shell.vhd:218]
+INFO: [Synth 8-638] synthesizing module 'DetermineHIT' [O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/new/DetermineHIT.vhd:45]
+WARNING: [Synth 8-614] signal 'HitNote' is read in the process but is not in the sensitivity list [O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/new/DetermineHIT.vhd:60]
+INFO: [Synth 8-256] done synthesizing module 'DetermineHIT' (5#1) [O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/new/DetermineHIT.vhd:45]
+WARNING: [Synth 8-5640] Port 'overdrive' is missing in component declaration [O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/imports/VGA_FinalProject/vga_test_pattern_shell.vhd:93]
+INFO: [Synth 8-3491] module 'KeyCompareCircuit' declared at 'O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/new/KeyCompareCircuit.vhd:31' bound to instance 'keyCmp' of component 'KeyCompareCircuit' [O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/imports/VGA_FinalProject/vga_test_pattern_shell.vhd:226]
+INFO: [Synth 8-638] synthesizing module 'KeyCompareCircuit' [O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/new/KeyCompareCircuit.vhd:50]
+INFO: [Synth 8-226] default block is never used [O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/new/KeyCompareCircuit.vhd:111]
+WARNING: [Synth 8-3848] Net OverDrive in module/entity KeyCompareCircuit does not have driver. [O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/new/KeyCompareCircuit.vhd:38]
+INFO: [Synth 8-256] done synthesizing module 'KeyCompareCircuit' (6#1) [O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/new/KeyCompareCircuit.vhd:50]
+INFO: [Synth 8-3491] module 'SCI_Rx' declared at 'O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/new/SCI_Rx.vhd:6' bound to instance 'receiver' of component 'SCI_Rx' [O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/imports/VGA_FinalProject/vga_test_pattern_shell.vhd:238]
+INFO: [Synth 8-638] synthesizing module 'SCI_Rx' [O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/new/SCI_Rx.vhd:17]
+INFO: [Synth 8-256] done synthesizing module 'SCI_Rx' (7#1) [O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/new/SCI_Rx.vhd:17]
+WARNING: [Synth 8-614] signal 'vVideo_on_interim_shadow' is read in the process but is not in the sensitivity list [O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/imports/VGA_FinalProject/vga_test_pattern_shell.vhd:263]
+WARNING: [Synth 8-614] signal 'fastvVideo_on' is read in the process but is not in the sensitivity list [O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/imports/VGA_FinalProject/vga_test_pattern_shell.vhd:263]
+INFO: [Synth 8-256] done synthesizing module 'vga_test_pattern_shell' (8#1) [O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/imports/VGA_FinalProject/vga_test_pattern_shell.vhd:22]
+WARNING: [Synth 8-7129] Port OverDrive in module KeyCompareCircuit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[639] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[638] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[637] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[636] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[635] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[634] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[633] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[632] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[631] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[630] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[629] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[628] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[627] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[626] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[625] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[624] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[623] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[622] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[621] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[620] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[619] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[618] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[617] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[616] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[615] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[614] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[613] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[612] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[611] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[610] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[609] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[608] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[607] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[606] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[605] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[604] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[603] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[602] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[601] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[600] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[599] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[598] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[597] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[596] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[595] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[594] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[593] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[592] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[591] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[590] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[589] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[588] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[587] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[586] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[585] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[584] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[583] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[582] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[581] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[580] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[579] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[578] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[577] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[576] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[575] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[574] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[573] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[572] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[571] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[570] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[569] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[568] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[567] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[566] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[565] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[564] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[563] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[562] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[561] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[560] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[559] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[558] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[557] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[556] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[555] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[554] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[553] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[552] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[551] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[550] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[549] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[548] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[547] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[546] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[545] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[544] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[543] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[542] in module DetermineHIT is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dina[541] in module DetermineHIT is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1345.055 ; gain = 107.906
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1345.055 ; gain = 107.906
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1345.055 ; gain = 107.906
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.178 . Memory (MB): peak = 1345.055 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [o:/CS56_S23/vga_midi/vga_midi/vga_midi.gen/sources_1/ip/blk_mem_gen_0_2/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'mySong'
+Finished Parsing XDC File [o:/CS56_S23/vga_midi/vga_midi/vga_midi.gen/sources_1/ip/blk_mem_gen_0_2/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'mySong'
+Parsing XDC File [o:/CS56_S23/vga_midi/vga_midi/vga_midi.gen/sources_1/ip/blk_pix_booleans/blk_pix_booleans/blk_pix_booleans_in_context.xdc] for cell 'blk_mem_uut'
+Finished Parsing XDC File [o:/CS56_S23/vga_midi/vga_midi/vga_midi.gen/sources_1/ip/blk_pix_booleans/blk_pix_booleans/blk_pix_booleans_in_context.xdc] for cell 'blk_mem_uut'
+Parsing XDC File [O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/constrs_1/imports/VGA_FinalProject/constraints_file.xdc]
+Finished Parsing XDC File [O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/constrs_1/imports/VGA_FinalProject/constraints_file.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/constrs_1/imports/VGA_FinalProject/constraints_file.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/vga_test_pattern_shell_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/vga_test_pattern_shell_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [O:/CS56_S23/vga_midi/vga_midi/vga_midi.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [O:/CS56_S23/vga_midi/vga_midi/vga_midi.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1462.824 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1462.824 ; gain = 0.000
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'blk_mem_uut' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'mySong' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
+WARNING: [Designutils 20-4072] Reference run did not run incremental synthesis because the design is too small; reverting to default synthesis
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 1471.727 ; gain = 234.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 1471.727 ; gain = 234.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for mySong. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for blk_mem_uut. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 1471.727 ; gain = 234.578
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'CS2_reg' in module 'MemBlockShiftCircuit'
+INFO: [Synth 8-802] inferred FSM for state register 'CS_reg' in module 'KeyCompareCircuit'
+INFO: [Synth 8-802] inferred FSM for state register 'CS_reg' in module 'SCI_Rx'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+         gamelogicwaitst |                             0000 |                             0000
+            startsltopst |                             0001 |                             0001
+                sltopbuf |                             0010 |                             0010
+               sltopbuf2 |                             0011 |                             0011
+                 sltopst |                             0100 |                             0100
+            startsllowst |                             0101 |                             0101
+                sllowbuf |                             0110 |                             0110
+               sllowbuf2 |                             0111 |                             0111
+                 sllowst |                             1000 |                             1000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'CS2_reg' using encoding 'sequential' in module 'MemBlockShiftCircuit'
+WARNING: [Synth 8-327] inferring latch for variable 'WData_reg' [O:/CS56_S23/vga_midi/vga_midi/vga_midi.srcs/sources_1/new/blockmover.vhd:283]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  idlest |                              000 |                              000
+             setnoteonst |                              001 |                              010
+             statussigst |                              010 |                              001
+                impoffst |                              011 |                              110
+                noteonst |                              100 |                              101
+            setnoteoffst |                              101 |                              011
+               noteoffst |                              110 |                              111
+             pitchbendst |                              111 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'CS_reg' using encoding 'sequential' in module 'KeyCompareCircuit'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                   sidle |                              000 |                              000
+               swait_tc2 |                              001 |                              001
+                  sshift |                              010 |                              011
+                   swait |                              011 |                              010
+                   sdone |                              100 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'CS_reg' using encoding 'sequential' in module 'SCI_Rx'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:24 . Memory (MB): peak = 1471.727 ; gain = 234.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 1     
+	   2 Input   12 Bit       Adders := 1     
+	   2 Input   10 Bit       Adders := 4     
+	   2 Input    9 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 1     
++---Registers : 
+	              640 Bit    Registers := 1     
+	               32 Bit    Registers := 1     
+	               24 Bit    Registers := 6     
+	               12 Bit    Registers := 1     
+	               10 Bit    Registers := 3     
+	                9 Bit    Registers := 3     
+	                8 Bit    Registers := 3     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 28    
++---Muxes : 
+	   2 Input  640 Bit        Muxes := 25    
+	  25 Input  640 Bit        Muxes := 1     
+	   2 Input   32 Bit        Muxes := 10    
+	   5 Input   32 Bit        Muxes := 1     
+	   3 Input   32 Bit        Muxes := 1     
+	   2 Input   24 Bit        Muxes := 8     
+	  16 Input   24 Bit        Muxes := 1     
+	   2 Input   12 Bit        Muxes := 1     
+	   2 Input   10 Bit        Muxes := 2     
+	   2 Input    9 Bit        Muxes := 1     
+	   4 Input    8 Bit        Muxes := 1     
+	  15 Input    8 Bit        Muxes := 1     
+	   9 Input    4 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 3     
+	   8 Input    3 Bit        Muxes := 1     
+	   3 Input    3 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 3     
+	   5 Input    3 Bit        Muxes := 1     
+	   9 Input    1 Bit        Muxes := 9     
+	   2 Input    1 Bit        Muxes := 2     
+	   3 Input    1 Bit        Muxes := 1     
+	   4 Input    1 Bit        Muxes := 2     
+	   8 Input    1 Bit        Muxes := 5     
+	   5 Input    1 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:36 . Memory (MB): peak = 1471.727 ; gain = 234.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:36 ; elapsed = 00:00:42 . Memory (MB): peak = 1471.727 ; gain = 234.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:36 ; elapsed = 00:00:43 . Memory (MB): peak = 1471.727 ; gain = 234.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:37 ; elapsed = 00:00:44 . Memory (MB): peak = 1471.727 ; gain = 234.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:43 ; elapsed = 00:00:50 . Memory (MB): peak = 1471.727 ; gain = 234.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:43 ; elapsed = 00:00:50 . Memory (MB): peak = 1471.727 ; gain = 234.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:43 ; elapsed = 00:00:50 . Memory (MB): peak = 1471.727 ; gain = 234.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:43 ; elapsed = 00:00:50 . Memory (MB): peak = 1471.727 ; gain = 234.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:43 ; elapsed = 00:00:50 . Memory (MB): peak = 1471.727 ; gain = 234.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:43 ; elapsed = 00:00:50 . Memory (MB): peak = 1471.727 ; gain = 234.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+-----------------+----------+
+|      |BlackBox name    |Instances |
++------+-----------------+----------+
+|1     |blk_mem_gen_0    |         1|
+|2     |blk_pix_booleans |         1|
++------+-----------------+----------+
+
+Report Cell Usage: 
++------+----------------------+------+
+|      |Cell                  |Count |
++------+----------------------+------+
+|1     |blk_mem_gen_0_bbox    |     1|
+|2     |blk_pix_booleans_bbox |     1|
+|3     |BUFG                  |     3|
+|4     |CARRY4                |   217|
+|5     |LUT1                  |    26|
+|6     |LUT2                  |  1245|
+|7     |LUT3                  |    35|
+|8     |LUT4                  |    45|
+|9     |LUT5                  |    45|
+|10    |LUT6                  |   285|
+|11    |MUXF7                 |    85|
+|12    |MUXF8                 |    42|
+|13    |FDRE                  |   939|
+|14    |FDSE                  |     5|
+|15    |LD                    |   637|
+|16    |IBUF                  |     2|
+|17    |OBUF                  |    10|
+|18    |OBUFT                 |     4|
++------+----------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:43 ; elapsed = 00:00:50 . Memory (MB): peak = 1471.727 ; gain = 234.578
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 649 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:30 ; elapsed = 00:00:46 . Memory (MB): peak = 1471.727 ; gain = 107.906
+Synthesis Optimization Complete : Time (s): cpu = 00:00:43 ; elapsed = 00:00:50 . Memory (MB): peak = 1471.727 ; gain = 234.578
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.051 . Memory (MB): peak = 1471.727 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 981 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1471.727 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 637 instances were transformed.
+  LD => LDCE: 637 instances
+
+Synth Design complete, checksum: f9805a5
+INFO: [Common 17-83] Releasing license: Synthesis
+55 Infos, 116 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:48 ; elapsed = 00:00:58 . Memory (MB): peak = 1471.727 ; gain = 234.578
+INFO: [Common 17-1381] The checkpoint 'O:/CS56_S23/vga_midi/vga_midi/vga_midi.runs/synth_1/vga_test_pattern_shell.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file vga_test_pattern_shell_utilization_synth.rpt -pb vga_test_pattern_shell_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Jun  5 23:24:44 2023...
