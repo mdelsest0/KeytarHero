@@ -1,0 +1,122 @@
+------------------------------------------------------
+-- Import Libraries
+------------------------------------------------------
+
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+
+------------------------------------------------------
+-- Declare Entity
+------------------------------------------------------
+
+entity scoringSystem is
+	port(
+    	clk      : in std_logic;
+        HIT, MISS: in std_logic; -- monopulsed signals from the Key Comparator
+        overDrive: out std_logic;
+        points   : out std_logic_vector(7 downto 0); -- 8 bits for score since 255 notes max
+    );
+end scoringSystem;
+
+------------------------------------------------------
+-- Declare Architecture
+------------------------------------------------------
+
+architecture behavioral of scoringSystem is
+
+------------------------------------------------------
+-- Define Signals
+------------------------------------------------------
+
+signal points_int: integer:=0; -- shadow points
+signal toOverDrive_count: unsigned(3 downto 0):=(others=>'0'); -- when 1111 activateOverdrive
+signal activateOverdrive, overDrive_shadow: std_logic:='0';
+signal inOverDrive_count: unsigned(2 downto 0):=(others=>'0'); -- counts down from five
+--signal HITorMISS: std_logic:='0';
+
+begin
+
+------------------------------------------------------
+-- Datapath Processes
+------------------------------------------------------
+
+-- synchronous process for point counter
+pointsCounter_proc : process(clk, HIT, MISS, overDrive_shadow)
+begin
+	if rising_edge(clk) then
+    	-- default
+        points_int<=points_int;
+        
+        -- counter
+    	if (HIT='1' and overDrive_shadow ='1') then
+        	points_int <= points_int+2;
+        elsif (HIT='1' and overDrive_shadow ='0') then
+        	points_int <= points_int+1;
+        elsif (MISS='1' and overDrive_shadow ='0') then
+        	if points_int>=1 then -- prevent negative score
+            	points_int <= points_int-1;
+            end if;
+        elsif (MISS='1' and overDrive_shadow ='1') then
+        	points_int<=points_int;
+        end if;
+        
+    end if;
+end process pointsCounter_proc;
+
+-- synchronous process for to overdrive
+toOverdriveCounter: process(clk, HIT, MISS)
+begin
+	if rising_edge(clk) then
+    	-- defaults
+    	toOverDrive_count<=toOverDrive_count;
+        activateOverdrive <='0';
+        
+        -- increment to overdrive counter
+        if HIT='1' then
+        	toOverDrive_count<=toOverDrive_count+1;
+        
+        -- reset overdrive counter if MISS and end streak
+        elsif MISS='1' then
+        	toOverDrive_count<=(others=>'0');
+        end if;
+        
+        -- find TC
+        if toOverDrive_count=15 then
+        	toOverDrive_count<=(others=>'0');
+            activateOverdrive <='1';
+        end if;
+        
+    end if;
+end process toOverdriveCounter;
+
+-- synchronous process for determining when to end overdrive
+inOverDriveCounter: process(clk, HIT, MISS, activateOverdrive)
+begin
+	if rising_edge(clk) then
+    	-- defaults
+    	inOverDrive_count<=inOverDrive_count;
+        overDrive_shadow<='0';
+        
+        -- count down
+        if activateOverdrive='1' then
+        	inOverDrive_count<="111"; -- six notes in overdrive
+        elsif HIT='1' or MISS='1' then
+        	-- decrement every note once in overdrive unless get back to 0
+        	if inOverDrive_count>= "001" then
+        		inOverDrive_count<=inOverDrive_count-1;
+            end if;
+        end if;	
+        
+        -- set overdrive output
+        if inOverDrive_count>= "001" then
+        	overDrive_shadow<='1';
+        end if;
+    
+    end if;
+end process inOverDriveCounter;
+
+points <= std_logic_vector(to_unsigned(points_int,8)); -- tie points to points integer
+overDrive <= overDrive_shadow; -- to use in if statements
+
+end behavioral;
